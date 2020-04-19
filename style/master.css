@@ -48,6 +48,7 @@ body, html {
 
 #container_slider input {
   display: none;
+  background-color: red;
 }
 
 #container_slider .slide_img {
@@ -62,7 +63,15 @@ body, html {
   height: inherit;
   object-fit: cover;
 }
-
+.bgcolor {
+  background-color: red;
+  opacity: 0;
+  transition: opacity 10s;
+}
+.override.bgcolor{
+  background-color: black;
+  opacity: 1;
+}
 #container_slider .prev, #container_slider .next {
   width:var( --big_nav_width);
   height: inherit;
@@ -108,10 +117,10 @@ body, html {
 }
 
 #container_slider #nav_slide {
-  border: 1px solid white;
+  border: 1px solid red;
   width: 100%;
   bottom: 12%;
-  height: 11px;
+  height: 12px;
   position: absolute;
   text-align: center;
   z-index: 99;
@@ -119,17 +128,192 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: blue;
 }
+  .a{
+  width: 14%;
+  bottom: 12%;
+  height:12px;
+  position: absolute;
+  right:1075px;
+  background-color:white;
+  animation: asd 16s infinite;
+}
+@keyframes asd {
+  0% {background-color: black;}
+  25%{background-color: black;}
+  50%{background-color: black;}
+  75%{background-color: black;}
+  100%{background-color: black;}
 
-#container_slider .dots {
+}
+.b{
+  width: 25%;
+  bottom: 12%;
+  height: 12px;
+  position: absolute;
+  right:748px;
+  color: black;
+  animation: myanimation 16s infinite;
+}
+@keyframes myanimation {
+  0% {background-color: white;}
+  25%{background-color: black;}
+  50%{background-color: black;}
+  75%{background-color: black;}
+  100%{background-color: black;}
+}
+.c{
+  width: 25%;
+  bottom: 12%;
+  height: 12px;
+  position: absolute;
+   right: 420px;
+   background-color: white;
+   animation: ayush 16s infinite;
+}
+@keyframes ayush {
+  0% {background-color: white;}
+  25%{background-color: white;}
+  50%{background-color: black;}
+  75%{background-color: black;}
+  100%{background-color: black;}
+
+}
+.d{
+  width: 32%;
+  bottom: 12%;
+  height: 12px;
+  position: absolute;
+  right:17px;
+  background: white;
+  animation: qwerty 16s infinite;
+}
+@keyframes qwerty {
+  0% {background-color: white;}
+  25%{background-color: white;}
+  50%{background-color: white;}
+  75%{background-color: white;}
+  100%{background-color: black;}
+}
+#container_slider #dot1{
   width:var(--dot-width_big);
   height:var(--dot-height_big);
-  margin: 0 5px;
   position: relative;
+  right: 400px;
+  margin: 0 5px;
   border-radius: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   transition: .4s;
   cursor: pointer;
+}
+#container_slider #dot2{
+  width:var(--dot-width_big);
+  height:var(--dot-height_big);
+  position: relative;
+  right: 100px;
+  margin: 0 5px;
+  border-radius: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: .4s;
+  cursor: pointer;
+}
+#container_slider #dot3{
+  width:var(--dot-width_big);
+  height:var(--dot-height_big);
+  position: relative;
+  left: 200px;
+  margin: 0 5px;
+  border-radius: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: .4s;
+  cursor: pointer;
+}
+#container_slider #dot4{
+  width:var(--dot-width_big);
+  height:var(--dot-height_big);
+  position: relative;
+  left: 575px;
+  margin: 0 5px;
+  border-radius: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: .4s;
+  cursor: pointer;
+}
+#container_slider #dot1 .text{
+  visibility: hidden;
+width: 120px;
+background-color: black;
+color: #fff;
+text-align: center;
+padding: 5px 0;
+border-radius: 6px;
+
+/* Position the tooltip text - see examples below! */
+position: absolute;
+z-index: 1;
+width: 120px;
+ top: 100%;
+ left: 50%;
+ margin-left: -60px;
+
+}
+
+#container_slider #dot2 .A{
+  visibility: hidden;
+width: 120px;
+background-color: black;
+color: #fff;
+text-align: center;
+padding: 5px 0;
+border-radius: 6px;
+
+/* Position the tooltip text - see examples below! */
+position: absolute;
+z-index: 1;
+width: 120px;
+ top: 100%;
+ left: 50%;
+ margin-left: -60px;
+
+}
+
+#container_slider #dot3 .B{
+  visibility: hidden;
+width: 120px;
+background-color: black;
+color: #fff;
+text-align: center;
+padding: 5px 0;
+border-radius: 6px;
+
+/* Position the tooltip text - see examples below! */
+position: absolute;
+z-index: 1;
+width: 120px;
+ top: 100%;
+ left: 50%;
+ margin-left: -60px;
+
+}
+
+#container_slider #dot4 .C{
+  visibility: hidden;
+width: 120px;
+background-color: black;
+color: #fff;
+text-align: center;
+padding: 5px 0;
+border-radius: 6px;
+
+/* Position the tooltip text - see examples below! */
+position: absolute;
+z-index: 1;
+width: 120px;
+ top: 100%;
+ left: 50%;
+ margin-left: -60px;
+
 }
 
 #container_slider #dot1:hover {
@@ -156,22 +340,54 @@ body, html {
   opacity: 1;
   animation: scroll 1.4s ease-in-out;
 }
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+.tooltip .text {
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+  text-align: left;
+  padding: 5px 0;
+  border-radius: 6px;
+  width: 120px;
+top: 100%;
+left: 50%;
+margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
 
+}
 #i1:checked ~ #nav_slide #dot1 {
-  background: #795548;
+  background: green;
 
+}
+#i1:checked ~ #nav_slide #dot1 .text{
+  visibility: visible;
 }
 
 #i2:checked ~ #nav_slide #dot2 {
-  background: #F44336;
+  background: green;
+}
+
+#i2:checked ~ #nav_slide #dot2 .A{
+  visibility: visible;
 }
 
 #i3:checked ~ #nav_slide #dot3 {
-  background: #2196F3;
+  background: green;
+}
+
+#i3:checked ~ #nav_slide #dot3 .B{
+  visibility: visible;
 }
 
 #i4:checked ~ #nav_slide #dot4 {
-  background: #4CAF50;
+  background: green;
+}
+
+#i4:checked ~ #nav_slide #dot4 .C{
+  visibility: visible;
 }
 
 @keyframes scroll {
